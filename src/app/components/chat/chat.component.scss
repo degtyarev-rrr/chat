@@ -1,0 +1,41 @@
+:host {
+  width: 100%;
+  height: 100%;
+}
+
+.chat {
+  display: flex;
+  height: 100%;
+  flex-direction: column;
+
+  &__messages {
+    overflow-y: scroll;
+    display: flex;
+    height: calc(100% - 100px);
+    padding: 1rem;
+    flex-direction: column;
+    row-gap: 1rem;
+    flex: 1 0 auto;
+  }
+
+  &__form {
+    display: flex;
+    overflow: hidden;
+    border-top: 1px solid #707070;
+  }
+
+  &__textarea {
+    flex: 1 0 auto;
+    border: none;
+    outline: none;
+    resize: none;
+  }
+
+  &__send-button {
+    border-radius: 0;
+  }
+
+  &__typing-indicator {
+    padding: 0.5rem;
+  }
+}

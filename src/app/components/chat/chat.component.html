@@ -1,0 +1,23 @@
+<div class="chat">
+  <div class="chat__messages">
+    <app-message *ngFor="let message of messages" [message]="message"></app-message>
+  </div>
+  <div class="chat__typing-indicator">{{ typingIndicator }}</div>
+  <form [formGroup]="chatForm" class="chat__form" novalidate>
+    <textarea
+      formControlName="message"
+      class="chat__textarea"
+      placeholder="Write a message..."
+      (input)="onTypeMessage(true)"
+      (blur)="onTypeMessage(false)"></textarea>
+    <button
+      mat-flat-button
+      [disabled]="chatForm.invalid"
+      class="chat__send-button"
+      type="button"
+      color="primary"
+      (click)="onSendMessage()"
+      >Send
+    </button>
+  </form>
+</div>
